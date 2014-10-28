@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Task{% endblock %}
+{% block body %}
+<form action='' method='post'>
+            <div class="container" style="padding: 16px 0">
+                <form action='' method='post'>
+                    <p><label for="id_body">Name:</label> <input id="id_body" maxlength="32" name="body" type="text" /></p>
+                    <p><label for="id_end">End:</label> <input id="id_end" name="end" type="text" /></p>
+                    <p><label for="id_status">Comments:</label> <input id="id_status" maxlength="256" name="status" type="text" /></p>
+                    <input type='hidden' name='csrfmiddlewaretoken' value='5jcEs9WJA7uhQLePFiem36Z6u55DBpGZ' />
+                    <input type='hidden' name='csrfmiddlewaretoken' value='5jcEs9WJA7uhQLePFiem36Z6u55DBpGZ' />
+                    {% csrf_token %}
+                    <input type='hidden' name='story_id' value=''>
+                    <input type='submit' value='send'>
+                </form>
+            </div>
+</form>
+{% endblock %}

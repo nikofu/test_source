@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Story{% endblock %}
+{% block body %}
+
+
+<form action='' method='post'>
+    <div class="container" style="padding: 24px 0">
+
+        <form action='' method='post'>
+            <p><label for="id_body">Body:</label> <input id="id_body" maxlength="32" name="body" type="text" /></p>
+            <p><label for="id_end">End:</label> <input id="id_end" name="end" type="text" /></p>
+            <p><label for="id_tags">Tags:</label> <select id="id_tags" name="tags">
+                <option value="" selected="selected">---------</option>
+                <option value="1">none</option>
+                <option value="2">low</option>
+                <option value="3">middle</option>
+                <option value="4">high</option>
+            </select></p>
+
+            <p><label for="id_status">Status:</label> <select id="id_status" name="status">
+                <option value="" selected="selected">---------</option>
+                <option value="1">not yet</option>
+                <option value="2">doing</option>
+                <option value="3">done</option>
+            </select></p>
+            <input type='hidden' name='csrfmiddlewaretoken' value='5jcEs9WJA7uhQLePFiem36Z6u55DBpGZ' />
+            {% csrf_token %}
+            <input type='submit' value='send'>
+        </form>
+
+    </div>
+</form>
+
+{% endblock %}
